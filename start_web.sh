@@ -1,13 +1,13 @@
 #!/bin/bash
 
-# ForkMonkey Web Interface Launcher
+# ForkCat Web Interface Launcher
 
-echo "🐵 Starting ForkMonkey Web Interface..."
+echo "🐵 Starting ForkCat Web Interface..."
 echo ""
 
-# Check if monkey exists
-if [ ! -f "monkey_data/dna.json" ]; then
-    echo "⚠️  No monkey found! Initializing..."
+# Check if cat exists
+if [ ! -f "cat_data/dna.json" ]; then
+    echo "⚠️  No cat found! Initializing..."
     python src/cli.py init
     echo ""
 fi

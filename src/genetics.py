@@ -1,5 +1,5 @@
 """
-ForkMonkey Genetics System
+ForkCat Genetics System
 
 Handles DNA generation, inheritance, mutations, and trait management.
 Inspired by CryptoKitties breeding mechanics.
@@ -22,7 +22,7 @@ class Rarity(str, Enum):
 
 
 class TraitCategory(str, Enum):
-    """Categories of monkey traits"""
+    """Categories of cat traits"""
     BODY_COLOR = "body_color"
     FACE_EXPRESSION = "face_expression"
     ACCESSORY = "accessory"
@@ -47,8 +47,8 @@ class Trait(BaseModel):
             ).hexdigest()[:8]
 
 
-class MonkeyDNA(BaseModel):
-    """Complete DNA sequence for a monkey"""
+class CatDNA(BaseModel):
+    """Complete DNA sequence for a cat"""
     generation: int = 1
     parent_id: Optional[str] = None
     traits: Dict[TraitCategory, Trait] = Field(default_factory=dict)
@@ -126,7 +126,7 @@ class GeneticsEngine:
     }
     
     @classmethod
-    def generate_random_dna(cls, generation: int = 1, parent_id: Optional[str] = None) -> MonkeyDNA:
+    def generate_random_dna(cls, generation: int = 1, parent_id: Optional[str] = None) -> CatDNA:
         """Generate completely random DNA"""
         traits = {}
         
@@ -141,7 +141,7 @@ class GeneticsEngine:
                 rarity=rarity
             )
         
-        return MonkeyDNA(
+        return CatDNA(
             generation=generation,
             parent_id=parent_id,
             traits=traits,
@@ -163,7 +163,7 @@ class GeneticsEngine:
             return Rarity.LEGENDARY
     
     @classmethod
-    def breed(cls, parent_dna: MonkeyDNA, mutation_rate: float = 0.3) -> MonkeyDNA:
+    def breed(cls, parent_dna: CatDNA, mutation_rate: float = 0.3) -> CatDNA:
         """
         Create child DNA from parent with inheritance and mutations
         
@@ -193,7 +193,7 @@ class GeneticsEngine:
             if random.random() < mutation_rate:
                 child_traits[category] = cls._mutate_trait(child_traits[category])
         
-        return MonkeyDNA(
+        return CatDNA(
             generation=parent_dna.generation + 1,
             parent_id=parent_dna.dna_hash,
             traits=child_traits,
@@ -225,7 +225,7 @@ class GeneticsEngine:
         )
     
     @classmethod
-    def evolve(cls, dna: MonkeyDNA, evolution_strength: float = 0.1) -> MonkeyDNA:
+    def evolve(cls, dna: CatDNA, evolution_strength: float = 0.1) -> CatDNA:
         """
         Evolve DNA over time (daily mutations)
         
@@ -245,7 +245,7 @@ class GeneticsEngine:
                 # Keep unchanged
                 evolved_traits[category] = trait.model_copy()
         
-        return MonkeyDNA(
+        return CatDNA(
             generation=dna.generation,
             parent_id=dna.parent_id,
             traits=evolved_traits,
@@ -254,7 +254,7 @@ class GeneticsEngine:
         )
     
     @classmethod
-    def dna_to_dict(cls, dna: MonkeyDNA) -> dict:
+    def dna_to_dict(cls, dna: CatDNA) -> dict:
         """Convert DNA to dictionary for storage"""
         return {
             "generation": dna.generation,
@@ -274,7 +274,7 @@ class GeneticsEngine:
         }
     
     @classmethod
-    def dict_to_dna(cls, data: dict) -> MonkeyDNA:
+    def dict_to_dna(cls, data: dict) -> CatDNA:
         """Convert dictionary to DNA object"""
         traits = {}
         for cat_str, trait_data in data["traits"].items():
@@ -286,7 +286,7 @@ class GeneticsEngine:
                 gene_sequence=trait_data["gene_sequence"]
             )
         
-        return MonkeyDNA(
+        return CatDNA(
             generation=data["generation"],
             parent_id=data.get("parent_id"),
             traits=traits,
@@ -298,38 +298,38 @@ class GeneticsEngine:
 
 def main():
     """Test genetics system"""
-    print("🧬 ForkMonkey Genetics System Test\n")
+    print("🧬 ForkCat Genetics System Test\n")
     
-    # Generate random monkey
-    print("1. Generating random monkey...")
-    monkey1 = GeneticsEngine.generate_random_dna()
-    print(f"   DNA Hash: {monkey1.dna_hash}")
-    print(f"   Rarity Score: {monkey1.get_rarity_score():.1f}/100")
+    # Generate random cat
+    print("1. Generating random cat...")
+    cat1 = GeneticsEngine.generate_random_dna()
+    print(f"   DNA Hash: {cat1.dna_hash}")
+    print(f"   Rarity Score: {cat1.get_rarity_score():.1f}/100")
     print(f"   Traits:")
-    for category, trait in monkey1.traits.items():
+    for category, trait in cat1.traits.items():
         print(f"     - {category.value}: {trait.value} ({trait.rarity.value})")
     
     # Breed child
-    print("\n2. Breeding child monkey...")
-    child = GeneticsEngine.breed(monkey1)
+    print("\n2. Breeding child cat...")
+    child = GeneticsEngine.breed(cat1)
     print(f"   Generation: {child.generation}")
     print(f"   Parent: {child.parent_id}")
     print(f"   DNA Hash: {child.dna_hash}")
     print(f"   Rarity Score: {child.get_rarity_score():.1f}/100")
     
     # Evolve
-    print("\n3. Evolving monkey over time...")
-    evolved = GeneticsEngine.evolve(monkey1, evolution_strength=0.3)
+    print("\n3. Evolving cat over time...")
+    evolved = GeneticsEngine.evolve(cat1, evolution_strength=0.3)
     print(f"   Mutations: {evolved.mutation_count}")
     print(f"   New DNA Hash: {evolved.dna_hash}")
     
     # Serialization
     print("\n4. Testing serialization...")
-    data = GeneticsEngine.dna_to_dict(monkey1)
+    data = GeneticsEngine.dna_to_dict(cat1)
     restored = GeneticsEngine.dict_to_dna(data)
-    print(f"   Original hash: {monkey1.dna_hash}")
+    print(f"   Original hash: {cat1.dna_hash}")
     print(f"   Restored hash: {restored.dna_hash}")
-    print(f"   Match: {monkey1.dna_hash == restored.dna_hash}")
+    print(f"   Match: {cat1.dna_hash == restored.dna_hash}")
     
     print("\n✅ Genetics system working!")
 

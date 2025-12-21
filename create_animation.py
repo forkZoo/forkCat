@@ -5,15 +5,15 @@ from PIL import Image
 import io
 import subprocess
 
-EVOLUTION_DIR = "monkey_evolution"
-OUTPUT_FILE = "monkey_evolution/evolution.gif"
+EVOLUTION_DIR = "cat_evolution"
+OUTPUT_FILE = "cat_evolution/evolution.gif"
 DURATION = 500  # ms between frames
 
 def create_animation():
-    svg_files = sorted(glob.glob(os.path.join(EVOLUTION_DIR, "*_monkey*.svg")))
+    svg_files = sorted(glob.glob(os.path.join(EVOLUTION_DIR, "*_cat*.svg")))
     
     if not svg_files:
-        print("No SVG files found in monkey_evolution/")
+        print("No SVG files found in cat_evolution/")
         return
 
     print(f"Found {len(svg_files)} evolution steps.")
