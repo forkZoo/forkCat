@@ -1,34 +1,34 @@
 {
   "generation": 1,
   "parent_id": null,
-  "dna_hash": "b8525cba7ead8578",
+  "dna_hash": "d85b9b7f28ca5049",
   "mutation_count": 0,
-  "birth_timestamp": 124630,
+  "birth_timestamp": 951831,
   "traits": {
     "body_color": {
-      "value": "brown",
-      "rarity": "common",
-      "gene_sequence": "d47133ea"
+      "value": "silver",
+      "rarity": "uncommon",
+      "gene_sequence": "2066cd78"
     },
     "face_expression": {
-      "value": "sleepy",
+      "value": "neutral",
       "rarity": "common",
-      "gene_sequence": "399185f3"
+      "gene_sequence": "374db983"
     },
     "accessory": {
-      "value": "bandana",
-      "rarity": "common",
-      "gene_sequence": "eef7e9dc"
+      "value": "halo",
+      "rarity": "rare",
+      "gene_sequence": "8e822e38"
     },
     "pattern": {
-      "value": "solid",
-      "rarity": "common",
-      "gene_sequence": "a55312dd"
+      "value": "fractals",
+      "rarity": "rare",
+      "gene_sequence": "0021f769"
     },
     "background": {
-      "value": "sunset",
-      "rarity": "common",
-      "gene_sequence": "5d4ff589"
+      "value": "beach",
+      "rarity": "uncommon",
+      "gene_sequence": "95919cff"
     },
     "special": {
       "value": "none",
@@ -36,5 +36,5 @@
       "gene_sequence": "9f7c3055"
     }
   },
-  "rarity_score": 10.0
+  "rarity_score": 26.666666666666668
 }
