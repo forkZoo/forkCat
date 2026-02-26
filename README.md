@@ -112,9 +112,9 @@ If you prefer to use Claude:
 
 <!-- CAT_STATS_START -->
 - **Generation**: 1
-- **Age**: 102 days
-- **Mutations**: 3
-- **Rarity Score**: 40.0/100
+- **Age**: 103 days
+- **Mutations**: 0
+- **Rarity Score**: 15.0/100
 <!-- CAT_STATS_END -->
 
 ## Family Tree
