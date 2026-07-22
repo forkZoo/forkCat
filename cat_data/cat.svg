@@ -8,11 +8,11 @@
     </linearGradient>
 </defs>
 <rect width="400" height="400" fill="#F0F8FF"/>
-<polygon points="140,120 110,60 170,100" fill="#FFD700" filter="url(#shadow)"/>
-<polygon points="260,120 290,60 230,100" fill="#FFD700" filter="url(#shadow)"/>
+<polygon points="140,120 110,60 170,100" fill="#808080" filter="url(#shadow)"/>
+<polygon points="260,120 290,60 230,100" fill="#808080" filter="url(#shadow)"/>
 <polygon points="140,115 120,75 160,100" fill="#FFB6C1"/>
 <polygon points="260,115 280,75 240,100" fill="#FFB6C1"/>
-<ellipse cx="200" cy="200" rx="100" ry="90" fill="#FFD700" filter="url(#shadow)"/>
+<ellipse cx="200" cy="200" rx="100" ry="90" fill="#808080" filter="url(#shadow)"/>
 <line x1="160" y1="210" x2="80" y2="200" stroke="#000" stroke-width="2" opacity="0.5"/>
 <line x1="240" y1="210" x2="320" y2="200" stroke="#000" stroke-width="2" opacity="0.5"/>
 <line x1="160" y1="220" x2="80" y2="210" stroke="#000" stroke-width="2" opacity="0.5"/>
