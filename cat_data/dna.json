@@ -1,8 +1,8 @@
 {
   "generation": 1,
   "parent_id": null,
-  "dna_hash": "4b7bcfc1904f8082",
-  "mutation_count": 2,
+  "dna_hash": "4e86e2e60a9fcd0d",
+  "mutation_count": 3,
   "birth_timestamp": 7824,
   "traits": {
     "body_color": {
@@ -31,10 +31,10 @@
       "gene_sequence": "ec41435d"
     },
     "special": {
-      "value": "shadow",
-      "rarity": "uncommon",
-      "gene_sequence": "db06738c"
+      "value": "energy",
+      "rarity": "rare",
+      "gene_sequence": "adb72200"
     }
   },
-  "rarity_score": 13.333333333333334
+  "rarity_score": 18.333333333333332
 }
