@@ -112,8 +112,8 @@ If you prefer to use Claude:
 
 <!-- CAT_STATS_START -->
 - **Generation**: 1
-- **Age**: 360 days
-- **Mutations**: 36
+- **Age**: 361 days
+- **Mutations**: 37
 - **Rarity Score**: 25.0/100
 <!-- CAT_STATS_END -->
 
